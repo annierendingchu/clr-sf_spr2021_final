@@ -8,93 +8,441 @@
 *{
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2em;
-    background-color: black;
+    font-size: 1em;
+    overflow: hidden;
+    background-color:rgba(0, 0, 0);
+}
+
+.background{
+    height: 100vh;
+    width: 100vw;
+    position:fixed;
+    opacity: 0.2;
+    /* background-blend-mode:multiply; */
+    animation: gradient 5s linear infinite;
+}
+
+@keyframes gradient {
+    0%{
+        background-image: url(1.jpg);
+    }
+    25%{
+        background-image: url(2.jpg);
+    }
+    50%{
+        background-image: url(3.jpg);
+    }
+    75%{
+        background-image: url(4.jpg);
+    }
+    100%{
+        background-image: url(1.jpg);
+    }
 }
 
 .grid-container {
     display:grid;
     height:100vh;
     width: 100vw;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
     justify-content: space-evenly;
-    
-
 }
 
-.grid1 {
-    background-color: rgb(0,0,0);
-    padding:50% 10%;
+.noise{
+    background-image: url(fb.jpg);
+    opacity: 0.2;
+    animation: grain 8s steps(10) infinite;
+    content: "";
+    height: 300%;
+    left: -50%;
+    position: fixed;
+    top: -100%;
+    width: 300%;
+  }
 
+.black{
+    background-color: black;
+    z-index: 0;
+    position:fixed
 }
+  
+  @keyframes grain {
+    0%, 100% { transform:translate(0, 0) }
+    10% { transform:translate(-5%, -10%) }
+    20% { transform:translate(-15%, 5%) }
+    30% { transform:translate(7%, -25%) }
+    40% { transform:translate(-5%, 25%) }
+    50% { transform:translate(-15%, 10%) }
+    60% { transform:translate(15%, 0%) }
+    70% { transform:translate(0%, 15%) }
+    80% { transform:translate(3%, 35%) }
+    90% { transform:translate(-10%, 10%) }
+  }
 
+.grid1,.grid2,.grid3,.grid4,.grid5,.grid6,.grid7,.grid8,.grid9,.grid10,.grid11,.grid12,.grid13,.grid14,.grid15,.grid16,.grid17,.grid18,.grid19,.grid20,.grid21,.grid22,.grid23,.grid24,.grid25,.grid26,.grid27,.grid28,.grid29,.grid30,.grid31,.grid32,.grid33,.grid34,.grid35,.grid36,.grid37,.grid38,.grid39,.grid40,.grid41,.grid42,.grid43,.grid44,.grid45,.grid46,.grid47,.grid48,.grid49,.grid50{
+    z-index: 200;
+    text-align: center;
+    padding:10%;
+    opacity: 0;
+}
 .grid1:hover {
-    background-color: rgb(204,208,90);
+    animation: grid1 1s linear 1;
 }
-
-.grid2 {
-    background-color: rgb(0,0,0);
-    padding:50% 10%;
-
+@keyframes grid1 {
+    0%{background-color: rgb(204,208,90);
+        opacity: 1;}
+    100%{opacity:0;}
 }
 .grid2:hover {
-    background-color: rgb(165,149,192);
+    animation: grid2 1s linear 1;
 
 }
-
-.grid3 {
-    background-color: rgb(0,0,0);
-    padding:50% 10%;
-
-
+@keyframes grid2 {
+    0%{background-color: rgb(165,149,192);
+        opacity: 1;}
+    100%{opacity:0;}
 }
+
 .grid3:hover {
-    background-color: rgb(23,61,39);
+    animation: grid3 5s linear 1;
+}
+@keyframes grid3 {
+    0%{background-color: rgb(23,61,39);
+        opacity: 1}
+    20%{background-color: rgb(157,253,192);opacity: 1;color:white}
+    40%{background-color: rgb(23,61,39);color:black;
+        opacity: 1}
+    60%{background-color: rgb(157,253,192);opacity: 1;color:white}
+    100%{opacity:0;}
 }
 
-.grid4 {
-    background-color: rgb(0,0,0);
-    padding:50% 10%;
-
-}
 .grid4:hover {
-    background-color: rgb(29,197,135);
+    animation: grid4 0.2s linear infinite;
 
 }
-
-.grid5 {
-    background-color: rgb(0,0,0);
-    padding:50% 10%;
-
+@keyframes grid4 {
+    0%{background-color: rgb(29,197,135);
+        opacity: 1}
+    50%{background-color: black;}
+    100%{opacity:0;}
 }
+
 .grid5:hover {
-    background-color: rgb(24,6,227);
-}
-.grid6 {
-    background-color: rgb(0,0,0);
-    padding:50% 10%;
+    animation: grid5 2s linear 1;
 
 }
+@keyframes grid5 {
+    0%{background-color: rgb(24,6,227);
+        opacity: 1}
+    20%{background-color: rgb(7,120,227);opacity: 1;color:rgb(7,120,227);}
+    40%{background-color: rgb(65,126,184);opacity: 1;color:rgb(65,126,184);}
+    20%{background-color: rgb(120,202,208);opacity: 1;color:rgb(120,202,208);}
+    20%{background-color: rgb(63,161,120);opacity: 1;color:rgb(63,161,120);}
+    100%{opacity:0;}
+}
+
 .grid6:hover {
-    background-color: rgb(184,98,22);
-}
-
-.grid7 {
-    background-color: rgb(0,0,0);
-    padding:50% 10%;
-
+    animation: grid6 1s linear 1;
 
 }
+@keyframes grid6 {
+    0%{background-color: rgb(184,98,22);
+        opacity: 1}
+    100%{opacity:0;}
+}
+
 .grid7:hover {
-    background-color: rgb(109,25,18);
-}
-
-.grid8 {
-    background-color: rgb(0,0,0);
-    padding:50% 10%;
-
+    animation: grid7 1s linear 1;
 
 }
+@keyframes grid7 {
+    0%{background-color: rgb(109,25,18);
+        opacity: 1}
+    100%{opacity:0;}
+}
+
 .grid8:hover {
-    background-color: rgb(255,0,77);
+    animation: grid8 3s linear 1;
+}
+@keyframes grid8 {
+    0%{background-color: rgb(255,0,77);
+        opacity: 1}
+    20%{background-color: black;opacity: 1;transform: translate(50%);}
+    40%{background-color: rgb(255,0,77);
+        opacity: 1;transform: translate(-50%);}
+    60%{background-color: black;opacity: 1;transform:translate(50%);}
+    80%{background-color: rgb(255,0,77);transform: translate(-50%);
+        /* transform: rotate(360deg); */
+        opacity: 1}
+    100%{opacity:0;}
+}
+
+.grid9:hover {
+    animation: grid9 2s linear 1;
+}
+@keyframes grid9 {
+    0%{background-color: rgb(46,32,236);
+        opacity: 1}
+    45%{background-color:rgb(46,32,236);opacity: 1}
+    50%{background-color: white;opacity: 1}
+    55%{background-color: rgb(46,32,236);opacity: 1}
+    100%{opacity:0;}
+}
+
+.grid10:hover {
+    animation: grid10 1s linear 1;
+
+}
+@keyframes grid10 {
+    0%{background-color: rgb(96,94,127);
+        opacity: 1}
+    100%{opacity:0;}
+}
+
+.grid11:hover {
+    animation: grid11 5s linear 1;
+    background-color: white;
+    opacity: 1;
+    color:white;
+}
+@keyframes grid11 {
+    0%{background-color: rgb(238,194,217);
+        opacity: 1;color: black;}
+    20%{background-color: rgb(255,213,236);opacity: 1;color:rgb(255,213,236);}
+    40%{background-color: rgb(255,230,244);opacity: 1;color:rgb(255,230,244);}
+    60%{background-color: rgb(255,245,251);opacity: 1;color:rgb(255,245,251);}
+    100%{background-color: rgb(255,255,255);opacity: 1;color:rgb(255,255,255);}
+}
+
+.grid12:hover {
+    animation: grid12 1s linear 1;
+}
+@keyframes grid12 {
+    0%{background-color: rgb(202,196,110);
+        opacity: 1}
+    100%{transform: translate(-100%);opacity:0;}
+}
+
+.grid13:hover {
+    animation: grid13 1s linear 1;
+
+}
+@keyframes grid13 {
+    0%{background-color: rgb(162,156,255);
+        opacity: 1}
+    100%{opacity:0;}
+}
+
+.grid14:hover {
+    animation: grid14 1s linear 1;
+}
+@keyframes grid14 {
+    0%{background-color: rgb(240,240,190);
+        opacity: 1}
+    100%{opacity:0;}
+}
+
+.grid15:hover {
+    animation: grid15 1s linear 1;
+}
+@keyframes grid15 {
+    0%{background-color: rgb(214,182,42);
+        opacity: 1}
+    100%{opacity:0;}
+}
+
+.grid16:hover {
+    animation: grid16 1s linear 1;
+}
+@keyframes grid16 {
+    0%{background-color: rgb(255,204,0);
+        opacity: 1}
+    100%{opacity:0;}
+}
+
+.grid17:hover {
+    background-color: rgb(46,203,6);
+    animation: grid17 5s alternate infinite;
+    /* background-color: black; */
+    opacity: 1;
+}
+@keyframes grid17 {
+    0%{background-color: rgb(46,203,6);
+        opacity: 1}
+    50%{transform: translate(-50%);}
+    100%{transform: scale(15,8);opacity: 1;}
+}
+
+.grid18:hover {
+    animation: grid18 1s linear 1;
+}
+@keyframes grid18 {
+    0%{background-color: rgb(154,52,95);
+        opacity: 1}
+    100%{opacity:0;}
+}
+
+.grid19:hover {
+    animation: grid3 5s linear 1;
+}
+
+.grid20:hover {
+    animation: grid11 5s linear 1;
+    background-color: white;
+    opacity: 1;
+    color:white;
+}
+
+.grid21:hover {
+    animation: grid5 1s linear 1;
+}
+
+.grid22:hover {
+    animation: grid16 1s linear 1;
+}
+
+.grid23:hover {
+    animation: grid10 1s linear 1;
+
+}
+
+.grid24:hover {
+    animation: grid24 1s linear 1;
+
+}
+@keyframes grid24 {
+    0%{background-color: rgb(187,150,0);
+        opacity: 1}
+    100%{opacity:0;}
+}
+
+.grid25:hover {
+    animation: grid11 5s linear 1;
+    background-color: white;
+    opacity: 1;
+    color:white;
+}
+
+.grid26:hover {
+    animation: grid10 1s linear 1;
+}
+
+.grid27:hover {
+    animation: grid24 1s linear 1;
+
+}
+
+.grid28:hover {
+    animation: grid14 1s linear 1;
+}
+
+.grid29:hover {
+    animation: grid10 1s linear 1;
+}
+
+.grid30:hover {
+    animation: grid30 1s linear 1;
+
+}
+@keyframes grid30 {
+    0%{background-color: rgb(94,64,20);
+        opacity: 1}
+    100%{opacity:0;}
+}
+
+.grid31:hover {
+    animation: grid14 1s linear 1;
+}
+
+.grid32:hover {
+    animation: grid3 5s linear 1;
+
+}
+
+.grid33:hover {
+    animation: grid33 1s linear 1;
+    background-color: rgb(0,255,55);
+    color:rgb(0,255,55);
+    opacity: 0.6;
+}
+@keyframes grid33 {
+    0%{background-color: rgb(0,255,55); color:black;
+        opacity: 1}
+    80%{background-color:black;opacity: 1;color:black;}
+    100%{background-color: rgb(0,255,55);opacity: 0.7;}
+}
+
+.grid34:hover {
+    animation: grid4 0.2s linear infinite;
+
+}
+
+.grid35:hover {
+    animation: grid8 3s linear 1;
+}
+
+.grid36:hover {
+    animation: grid1 1s linear 1;
+}
+
+.grid37:hover {
+    animation: grid3 5s linear 1;
+}
+
+.grid38:hover {
+    animation: grid11 5s linear 1;
+    background-color: white;
+    opacity: 1;
+    color:white;
+}
+
+.grid39:hover {
+    animation: grid13 1s linear 1;
+}
+
+.grid40:hover {
+    animation: grid4 0.2s linear infinite;
+}
+
+.grid41:hover {
+    animation: grid24 1s linear 1;
+}
+
+.grid42:hover {
+    animation: grid10 1s linear 1;
+}
+
+.grid43:hover {
+    animation: grid30 1s linear 1;
+}
+
+.grid44:hover {
+    animation: grid3 5s linear 1;
+}
+
+.grid45:hover {
+    animation: grid13 1s linear 1;
+}
+
+.grid46:hover {
+    animation: grid5 1s linear 1;
+}
+
+.grid47:hover {
+    animation: grid14 1s linear 1;
+}
+
+.grid48:hover {
+    animation: grid12 1s linear 1;
+}
+
+.grid49:hover {
+    animation: grid33 1s linear 1;
+    background-color: rgb(0,255,55);
+    color:rgb(0,255,55);
+    opacity: 0.6;
+}
+
+.grid50:hover {
+    animation: grid13 1s linear 1;
 }
